@@ -1,13 +1,7 @@
 import { StyleSheet, Font } from "@react-pdf/renderer";
 
-Font.register({
-  family: "Alibaba-PuHuiTi-Light",
-  src: "/huakang.ttf",
-});
-
 export const styles = StyleSheet.create({
   page: {
-    fontFamily: "Alibaba-PuHuiTi-Light",
     flexDirection: "row",
     display: "flex",
     fontSize: 12,

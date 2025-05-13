@@ -26,9 +26,14 @@ export default function App({}: Props) {
   useEffect(() => {
     Font.load({
       fontFamily: "Alibaba-PuHuiTi-Light",
-    }).then(() => {
-      setLoading(false);
-    });
+    })
+      .then(() => {
+        setLoading(false);
+      })
+      .catch((e) => {
+        alert("字体加载失败：" + e.message);
+        setLoading(false);
+      });
   });
   return (
     <ResumeContext.Provider
@@ -62,7 +67,7 @@ export default function App({}: Props) {
           关注公众号&quot;JS酷&quot;，回复&quot;简历&quot;获取源码
         </div>
       </div>
-      <div className="flex-1 bg-gray-800 flex justify-center items-center">
+      <div className="flex-1 bg-gray-800 flex justify-center items-center" style={{height: '100vh'}}>
         {loading ? (
           <LoadingOutlined style={{ fontSize: 50, color: "#fff" }} />
         ) : (
